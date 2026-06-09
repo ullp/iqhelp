@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Help & Datel Systems s.r.o. - Automatizace účetních procesů</title>
+    <meta name="description" content="Specialisté na automatizaci účetních procesů, implementaci účetních systémů a AI řešení pro efektivní účetnictví.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="#hero" class="logo">
+                <img src="https://www.iqhelp.cz/wp-content/uploads/2024/02/iqhelplogo.png" alt="IQ Help Logo" class="logo__img">
+            </a>
+            <nav class="nav" id="nav">
+                <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list" id="navList">
+                    <li><a href="#hero" class="nav__link active">Home</a></li>
+                    <li><a href="#about" class="nav__link">O nás</a></li>
+                    <li><a href="#services" class="nav__link">Služby</a></li>
+                    <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav__link">Kontakty</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero__slides" id="heroSlides">
+            <div class="hero__slide active" style="background-image: linear-gradient(135deg, rgba(0,46,91,0.85), rgba(0,46,91,0.6)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+                <div class="container hero__content">
+                    <span class="hero__tag" data-animate>účetní procesy, konzultace</span>
+                    <h1 class="hero__title" data-animate>Těšíme se, že vás poznáme a pomůžeme vám posunout vaši společnost do nových výšin!</h1>
+                    <a href="#services" class="btn btn--bordered" data-animate>naše služby <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="hero__slide" style="background-image: linear-gradient(135deg, rgba(0,46,91,0.85), rgba(0,46,91,0.6)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+                <div class="container hero__content">
+                    <span class="hero__tag" data-animate>automatizace procesů</span>
+                    <h1 class="hero__title" data-animate>AI a Python, Java, JavaScript — propojení databází z účetních programů</h1>
+                    <a href="#about" class="btn btn--bordered" data-animate>více informací <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hero__controls">
+            <button class="hero__dot active" data-slide="0"></button>
+            <button class="hero__dot" data-slide="1"></button>
+        </div>
+        <button class="hero__arrow hero__arrow--prev" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="hero__arrow hero__arrow--next" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section__header" data-animate>
+                <h2 class="section__title">O nás</h2>
+                <div class="section__divider"></div>
+            </div>
+            <div class="about__grid">
+                <div class="about__text" data-animate>
+                    <h3>IQ Help & Datel Systems s.r.o.</h3>
+                    <p>Specializujeme se na rozvoj a implementaci automatizací účetních procesů. Naše řešení mají svá specifika a vyžadují správné načasování v účetních uzávěrkách.</p>
+                    <p>S využitím moderních technologií jako <strong>AI, Python, Java a JavaScript</strong> propojujeme databáze z účetních programů a vytváříme efektivní automatizovaná řešení na míru.</p>
+                    <p>Naším cílem je zbavit vás rutinní administrativy a umožnit vám soustředit se na to podstatné — růst vašeho podnikání.</p>
+                    <div class="about__stats">
+                        <div class="stat">
+                            <span class="stat__number" data-count="15">0</span>
+                            <span class="stat__label">let zkušeností</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-count="120">0</span>
+                            <span class="stat__label">projektů</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-count="98">0</span>
+                            <span class="stat__label">% spokojených klientů</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__image" data-animate>
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="features__grid">
+                <div class="feature-card" data-animate>
+                    <div class="feature-card__icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3 class="feature-card__title">Proč naše poradenství</h3>
+                    <p class="feature-card__text">Věnujeme se rozvoji automatizací účetních procesů, které mají svá specifika a vyžadují správné načasování v účetních uzávěrkách.</p>
+                    <a href="#services" class="feature-card__link">Zjistit více <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-animate>
+                    <div class="feature-card__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-card__title">Globální statistiky</h3>
+                    <p class="feature-card__text">Rychlá řešení nejsložitějších obchodních problémů s kooperativními procesy díky moderním technologiím.</p>
+                    <a href="#services" class="feature-card__link">Zjistit více <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-animate>
+                    <div class="feature-card__icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-card__title">Automatizace procesů</h3>
+                    <p class="feature-card__text">Vše je navrženo tak, aby řešení bylo plně automatizovatelné — od vstupních dat po výstupy.</p>
+                    <a href="#services" class="feature-card__link">Zjistit více <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section__header" data-animate>
+                <h2 class="section__title">Služby</h2>
+                <div class="section__divider"></div>
+                <p class="section__subtitle">Komplexní služby v oblasti účetnictví a automatizace procesů</p>
+            </div>
+            <div class="services__grid">
+                <div class="service-card" data-animate>
+                    <div class="service-card__icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3 class="service-card__title">Implementace účetního systému</h3>
+                    <p class="service-card__text">Implementace účetního systému je proces, při kterém se vytváří a zavádí softwarové řešení pro správu účetnictví a finančních dat v organizaci.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-card__icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-card__title">Nastavení automatizace účetních úkonů</h3>
+                    <p class="service-card__text">Nastavení automatizace účetních úkonů umožňuje optimalizovat a zrychlit proces účetnictví pomocí využití moderních technologií a softwaru.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-card__icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="service-card__title">Školení zaměstnanců v práci s účetním systémem</h3>
+                    <p class="service-card__text">Školení zaměstnanců v práci s účetním systémem je důležitým krokem k zajištění efektivity a přesnosti vedení účetnictví ve firmě.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-card__icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="service-card__title">Podpora při přechodu na nový účetní systém</h3>
+                    <p class="service-card__text">Podpora při přechodu na nový účetní systém je klíčová pro zajištění hladkého a efektivního procesu implementace a minimalizaci chyb.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-card__icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-card__title">Poradenství v oblasti zjednodušení úkonů</h3>
+                    <p class="service-card__text">Poradenství v oblasti zjednodušení úkonů pro ekonomické oddělení pomáhá optimalizovat procesy a snižovat administrativní zátěž.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-card__icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="service-card__title">Zlepšení procesů a efektivita v účetnictví</h3>
+                    <p class="service-card__text">Zlepšení procesů a efektivita v účetnictví pomáhá optimalizovat finanční tok společnosti a zajišťuje přesné a rychlé zpracování účetních procesů.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" style="background-image: linear-gradient(135deg, rgba(0,46,91,0.9), rgba(0,46,91,0.7)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <div class="container cta__content" data-animate>
+            <h2 class="cta__title">Připraveni na digitalizaci vašeho účetnictví?</h2>
+            <p class="cta__text">Kontaktujte nás a zjistěte, jak můžeme vaší firmě pomoci s automatizací účetních procesů.</p>
+            <a href="#contact" class="btn btn--accent">Kontaktujte nás <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section__header" data-animate>
+                <h2 class="section__title">Portfolio</h2>
+                <div class="section__divider"></div>
+                <p class="section__subtitle">Ukázky našich realizovaných projektů</p>
+            </div>
+            <div class="portfolio__grid">
+                <div class="portfolio-item" data-animate>
+                    <div class="portfolio-item__image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Projekt automatizace">
+                        <div class="portfolio-item__overlay">
+                            <h4>Automatizace fakturace</h4>
+                            <p>Implementace automatického zpracování faktur pro střední firmu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-animate>
+                    <div class="portfolio-item__image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Projekt účetního systému">
+                        <div class="portfolio-item__overlay">
+                            <h4>Migrace účetního systému</h4>
+                            <p>Přechod na nový účetní systém pro mezinárodní společnost</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-animate>
+                    <div class="portfolio-item__image">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Projekt AI řešení">
+                        <div class="portfolio-item__overlay">
+                            <h4>AI pro účetní uzávěrky</h4>
+                            <p>Nasazení AI řešení pro automatizaci měsíčních uzávěrek</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-animate>
+                    <div class="portfolio-item__image">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Projekt školení">
+                        <div class="portfolio-item__overlay">
+                            <h4>Školení účetních týmů</h4>
+                            <p>Komplexní školení 50+ zaměstnanců v novém účetním systému</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section--gray" id="contact">
+        <div class="container">
+            <div class="section__header" data-animate>
+                <h2 class="section__title">Kontakt</h2>
+                <div class="section__divider"></div>
+                <p class="section__subtitle">Máte zájem o spolupráci? Ozvěte se nám!</p>
+            </div>
+            <div class="contact__grid">
+                <div class="contact__info" data-animate>
+                    <div class="contact__item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresa</h4>
+                            <p>IQ Help & Datel Systems s.r.o.</p>
+                            <p>Česká republika</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+420731151045">+420 731 151 045</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:info@iqhelp.cz">info@iqhelp.cz</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Web</h4>
+                            <p><a href="https://www.iqhelp.cz">www.iqhelp.cz</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__domains">
+                        <p><strong>Související domény:</strong> iqhelp.sk, iqdatel.cz, iqdatel.eu, iqdatel.sk</p>
+                    </div>
+                </div>
+                <div class="contact__form" data-animate>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Jméno *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="E-mail *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Telefonní kontakt *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Zpráva *" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--lg">Odeslat <i class="fas fa-chevron-right"></i></button>
+                        <p class="form__status" id="formStatus"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand" data-animate>
+                    <img src="https://www.iqhelp.cz/wp-content/uploads/2024/02/iqhelplogo.png" alt="IQ Help Logo" class="footer__logo">
+                    <p>Specialisté na automatizaci účetních procesů a digitální transformaci.</p>
+                </div>
+                <div class="footer__links" data-animate>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">O nás</a></li>
+                        <li><a href="#services">Služby</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Kontakty</a></li>
+                    </ul>
+                </div>
+                <div class="footer__domains" data-animate>
+                    <h4>Domény</h4>
+                    <ul>
+                        <li>iqhelp.cz</li>
+                        <li>iqhelp.sk</li>
+                        <li>iqdatel.cz</li>
+                        <li>iqdatel.eu</li>
+                        <li>iqdatel.sk</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p>&copy; 2026 <a href="https://www.iqhelp.cz">IQ Help & Datel Systems s.r.o.</a> Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
