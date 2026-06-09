@@ -78,7 +78,6 @@ function updateActiveLink() {
     });
 }
 
-// ===== Header Scroll Effect =====
 function handleHeaderScroll() {
     if (window.scrollY > 80) {
         header.classList.add('scrolled');
@@ -99,16 +98,18 @@ const navList = document.getElementById('navList');
 navToggle.addEventListener('click', function() {
     this.classList.toggle('active');
     navList.classList.toggle('active');
+    document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
 });
 
 navLinks.forEach(link => {
     link.addEventListener('click', function() {
         navToggle.classList.remove('active');
         navList.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
-// ===== Scroll Animations (Intersection Observer) =====
+// ===== Scroll Animations =====
 const animateElements = document.querySelectorAll('[data-animate]');
 
 const animateObserver = new IntersectionObserver((entries) => {
@@ -128,36 +129,30 @@ animateElements.forEach(el => animateObserver.observe(el));
 // ===== Counter Animation =====
 function animateCounter(element, target) {
     let current = 0;
-    const increment = Math.ceil(target / 60);
+    const steps = 60;
+    const increment = target / steps;
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             current = target;
             clearInterval(timer);
         }
-        if (element.dataset.countSuffix) {
-            element.textContent = current + element.dataset.countSuffix;
-        } else {
-            element.textContent = current;
-        }
+        element.textContent = Math.floor(current);
     }, 25);
 }
 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
             const target = parseInt(entry.target.dataset.count);
-            if (!entry.target.dataset.animated) {
-                entry.target.dataset.animated = 'true';
-                animateCounter(entry.target, target);
-            }
+            animateCounter(entry.target, target);
             counterObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat__number[data-count]').forEach(el => {
-    el.dataset.countSuffix = el.textContent.includes('%') ? '%' : '';
+document.querySelectorAll('.stat__value[data-count]').forEach(el => {
     counterObserver.observe(el);
 });
 
@@ -168,10 +163,10 @@ const formStatus = document.getElementById('formStatus');
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = 'Odesílám... <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.innerHTML = 'Odesílám… <i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
         formStatus.textContent = '';
         formStatus.className = 'form__status';
@@ -182,9 +177,7 @@ if (contactForm) {
             const response = await fetch('https://formspree.io/f/xqapokaj', {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
 
             if (response.ok) {
@@ -205,18 +198,18 @@ if (contactForm) {
     });
 }
 
-// ===== Smooth Scroll for anchor links (fallback) =====
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href === '#') return;
-        
+
         const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
             const headerHeight = document.querySelector('.header').offsetHeight;
             const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-            
+
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
