@@ -161,42 +161,12 @@ const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
+    contactForm.addEventListener('submit', function(e) {
         const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = 'Odesílám… <i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
         formStatus.textContent = '';
         formStatus.className = 'form__status';
-
-        const formData = new FormData(this);
-
-        try {
-            const response = await fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                formStatus.textContent = 'Děkujeme! Vaše zpráva byla odeslána. Budeme vás kontaktovat co nejdříve.';
-                formStatus.className = 'form__status success';
-                contactForm.reset();
-            } else {
-                formStatus.textContent = data.error || 'Došlo k chybě při odesílání. Zkuste to prosím později.';
-                formStatus.className = 'form__status error';
-            }
-        } catch (error) {
-            formStatus.textContent = 'Došlo k chybě při odesílání. Zkuste to prosím později.';
-            formStatus.className = 'form__status error';
-        }
-
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
     });
 }
 

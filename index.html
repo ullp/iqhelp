@@ -282,22 +282,26 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact__form" id="contactForm" action="https://formspree.io/f/xqapokaj" method="POST">
+                <form class="contact__form" id="contactForm" action="https://formsubmit.co/info@iqhelp.cz" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_subject" value="Nová zpráva z webu IQ Help">
+                    <input type="hidden" name="_next" value="https://www.iqhelp.cz/#contact">
                     <div class="form__row">
-                        <input type="text" name="name" placeholder="Jméno *" required>
+                        <input type="text" name="Jméno" placeholder="Jméno *" required>
                     </div>
                     <div class="form__row">
-                        <input type="email" name="email" placeholder="E-mail *" required>
+                        <input type="email" name="E-mail" placeholder="E-mail *" required>
                     </div>
                     <div class="form__row">
-                        <input type="tel" name="phone" placeholder="Telefonní kontakt *" required>
+                        <input type="tel" name="Telefon" placeholder="Telefonní kontakt *" required>
                     </div>
                     <div class="form__row">
-                        <textarea name="message" placeholder="Zpráva *" rows="5" required></textarea>
+                        <textarea name="Zpráva" placeholder="Zpráva *" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn--primary btn--lg">Odeslat <i class="fas fa-arrow-right"></i></button>
                     <p class="form__status" id="formStatus"></p>
-                    <p class="form__note">Odesláním souhlasíte se zpracováním osobních údajů. Formulář je zabezpečen službou Formspree.</p>
+                    <p class="form__note">Odesláním souhlasíte se zpracováním osobních údajů.</p>
                 </form>
             </div>
         </div>
