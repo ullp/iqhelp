@@ -19,7 +19,7 @@ function nextSlide() {
     goToSlide(next);
 }
 
-function prevSlide() {
+function prevSlide() {Zjis
     const prev = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
     goToSlide(prev);
 }

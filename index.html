@@ -40,7 +40,6 @@
     <section class="hero" id="hero">
         <div class="hero__slides" id="heroSlides">
             <div class="hero__slide active">
-                <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
                 <div class="hero__overlay"></div>
                 <div class="container hero__content">
                     <span class="hero__tag">účetní procesy, konzultace</span>
@@ -52,7 +51,6 @@
                 </div>
             </div>
             <div class="hero__slide">
-                <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
                 <div class="hero__overlay"></div>
                 <div class="container hero__content">
                     <span class="hero__tag">automatizace procesů</span>
@@ -68,8 +66,6 @@
             <button class="hero__dot active" data-slide="0"></button>
             <button class="hero__dot" data-slide="1"></button>
         </div>
-        <button class="hero__arrow hero__arrow--prev" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
-        <button class="hero__arrow hero__arrow--next" id="heroNext"><i class="fas fa-chevron-right"></i></button>
     </section>
 
     <!-- ===== ABOUT ===== -->
@@ -103,12 +99,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="about__media">
-                    <div class="about__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Tým IQ Help">
-                        <div class="about__image-accent"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -123,7 +113,6 @@
                     </div>
                     <h3 class="feature__title">Proč naše poradenství</h3>
                     <p class="feature__text">Věnujeme se rozvoji automatizací účetních procesů, které mají svá specifika a vyžadují správné načasování v účetních uzávěrkách.</p>
-                    <a href="#services" class="feature__link">Zjistit více <i class="fas fa-arrow-right"></i></a>
                 </article>
                 <article class="feature">
                     <div class="feature__icon">
@@ -131,7 +120,6 @@
                     </div>
                     <h3 class="feature__title">Globální statistiky</h3>
                     <p class="feature__text">Rychlá řešení nejsložitějších obchodních problémů s kooperativními procesy díky moderním technologiím.</p>
-                    <a href="#services" class="feature__link">Zjistit více <i class="fas fa-arrow-right"></i></a>
                 </article>
                 <article class="feature">
                     <div class="feature__icon">
@@ -139,7 +127,6 @@
                     </div>
                     <h3 class="feature__title">Automatizace procesů</h3>
                     <p class="feature__text">Vše je navrženo tak, aby řešení bylo plně automatizovatelné — od vstupních dat po výstupy.</p>
-                    <a href="#services" class="feature__link">Zjistit více <i class="fas fa-arrow-right"></i></a>
                 </article>
             </div>
         </div>
@@ -208,35 +195,39 @@
                 <div class="section__rule"></div>
                 <p class="section__subtitle">Ukázky našich realizovaných projektů</p>
             </div>
-            <div class="portfolio__grid">
-                <figure class="portfolio__item">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Automatizace fakturace">
-                    <figcaption class="portfolio__caption">
-                        <h4>Automatizace fakturace</h4>
-                        <p>Automatické zpracování faktur pro střední firmu</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Migrace účetního systému">
-                    <figcaption class="portfolio__caption">
-                        <h4>Migrace účetního systému</h4>
-                        <p>Přechod na nový systém pro mezinárodní společnost</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI pro účetní uzávěrky">
-                    <figcaption class="portfolio__caption">
-                        <h4>AI pro účetní uzávěrky</h4>
-                        <p>Automatizace měsíčních uzávěrek pomocí AI</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Školení účetních týmů">
-                    <figcaption class="portfolio__caption">
-                        <h4>Školení účetních týmů</h4>
-                        <p>50+ zaměstnanců proškoleno v novém systému</p>
-                    </figcaption>
-                </figure>
+            <div class="portfolio__logos">
+                <div class="portfolio__logo-item">
+                    <i class="fas fa-building"></i>
+                    <span class="portfolio__logo-name">IQ Datel</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="portfolio__logo-name">Pohoda</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fas fa-calculator"></i>
+                    <span class="portfolio__logo-name">Money S3</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fas fa-database"></i>
+                    <span class="portfolio__logo-name">SQL Server</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fab fa-python"></i>
+                    <span class="portfolio__logo-name">Python</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fab fa-java"></i>
+                    <span class="portfolio__logo-name">Java</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fab fa-js"></i>
+                    <span class="portfolio__logo-name">JavaScript</span>
+                </div>
+                <div class="portfolio__logo-item">
+                    <i class="fas fa-robot"></i>
+                    <span class="portfolio__logo-name">AI / ML</span>
+                </div>
             </div>
         </div>
     </section>
@@ -315,32 +306,12 @@
                     <img src="https://www.iqhelp.cz/wp-content/uploads/2024/02/iqhelplogo.png" alt="IQ Help" class="footer__logo">
                     <p>Specialisté na automatizaci účetních procesů a digitální transformaci.</p>
                 </div>
-                <div class="footer__col">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">O nás</a></li>
-                        <li><a href="#services">Služby</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Kontakt</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h4>Kontakt</h4>
-                    <ul>
-                        <li><a href="tel:+420731151045">+420 731 151 045</a></li>
-                        <li><a href="mailto:info@iqhelp.cz">info@iqhelp.cz</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h4>Domény</h4>
-                    <ul>
-                        <li>iqhelp.cz</li>
-                        <li>iqhelp.sk</li>
-                        <li>iqdatel.cz</li>
-                        <li>iqdatel.eu</li>
-                        <li>iqdatel.sk</li>
-                    </ul>
+                <div class="footer__menu">
+                    <a href="#hero">Home</a>
+                    <a href="#about">O nás</a>
+                    <a href="#services">Služby</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Kontakt</a>
                 </div>
             </div>
             <div class="footer__bottom">
