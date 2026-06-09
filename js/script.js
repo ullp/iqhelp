@@ -174,18 +174,20 @@ if (contactForm) {
         const formData = new FormData(this);
 
         try {
-            const response = await fetch('https://formspree.io/f/xqapokaj', {
+            const response = await fetch(this.action, {
                 method: 'POST',
                 body: formData,
                 headers: { 'Accept': 'application/json' }
             });
+
+            const data = await response.json();
 
             if (response.ok) {
                 formStatus.textContent = 'Děkujeme! Vaše zpráva byla odeslána. Budeme vás kontaktovat co nejdříve.';
                 formStatus.className = 'form__status success';
                 contactForm.reset();
             } else {
-                formStatus.textContent = 'Došlo k chybě při odesílání. Zkuste to prosím později.';
+                formStatus.textContent = data.error || 'Došlo k chybě při odesílání. Zkuste to prosím později.';
                 formStatus.className = 'form__status error';
             }
         } catch (error) {

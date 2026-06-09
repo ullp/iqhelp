@@ -1093,6 +1093,13 @@ ul { list-style: none; }
 .form__status.success { color: #059669; }
 .form__status.error { color: #DC2626; }
 
+.form__note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
 /* ===== FOOTER ===== */
 .footer {
     background: var(--text);
