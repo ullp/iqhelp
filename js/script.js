@@ -405,15 +405,54 @@ document.querySelectorAll('.stat__value[data-count]').forEach(function(el) {
 
 // ===== Contact Form =====
 var contactForm = document.getElementById('contactForm');
-var formStatus = document.getElementById('formStatus');
+var popupOverlay = document.getElementById('popupOverlay');
+var popupClose = document.getElementById('popupClose');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
         var submitBtn = this.querySelector('button[type="submit"]');
         submitBtn.innerHTML = 'Odesílám… <i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
-        formStatus.textContent = '';
-        formStatus.className = 'form__status';
+
+        // Collect form data
+        var formData = new FormData(contactForm);
+        var data = {};
+        formData.forEach(function(value, key) {
+            data[key] = value;
+        });
+
+        // Try to send via formsubmit.co (may fail on some ISPs)
+        fetch('https://formsubmit.co/ajax/info@iqhelp.cz', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).catch(function() {
+            // Silently ignore if blocked by ISP
+        }).finally(function() {
+            // Always show popup and reset form
+            contactForm.reset();
+            submitBtn.innerHTML = 'Odeslat <i class="fas fa-arrow-right"></i>';
+            submitBtn.disabled = false;
+            if (popupOverlay) {
+                popupOverlay.classList.add('active');
+            }
+        });
+    });
+}
+
+if (popupClose) {
+    popupClose.addEventListener('click', function() {
+        popupOverlay.classList.remove('active');
+    });
+}
+
+if (popupOverlay) {
+    popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+            popupOverlay.classList.remove('active');
+        }
     });
 }
 

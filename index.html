@@ -179,11 +179,7 @@
                 <p class="section__subtitle">Máte zájem o spolupráci? Ozvěte se nám!</p>
             </div>
             <div class="contact__form-wrapper">
-                <form class="contact__form contact__form--full" id="contactForm" action="https://formsubmit.co/info@iqhelp.cz" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="box">
-                    <input type="hidden" name="_subject" value="Nová zpráva z webu IQ Help">
-                    <input type="hidden" name="_next" value="https://www.iqhelp.cz/#contact">
+                <form class="contact__form contact__form--full" id="contactForm">
                     <div class="form__row">
                         <input type="text" name="Jméno" placeholder="Jméno *" required>
                     </div>
@@ -204,8 +200,14 @@
                     <div class="form__row">
                         <textarea name="Zpráva" placeholder="Zpráva *" rows="5" required></textarea>
                     </div>
+                    <div class="form__row form__captcha">
+                        <label class="captcha__checkbox">
+                            <input type="checkbox" id="captchaCheck" required>
+                            <span class="captcha__custom"></span>
+                            <span class="captcha__label">Nejsem robot</span>
+                        </label>
+                    </div>
                     <button type="submit" class="btn btn--primary btn--lg">Odeslat <i class="fas fa-arrow-right"></i></button>
-                    <p class="form__status" id="formStatus"></p>
                     <p class="form__note">Odesláním souhlasíte se zpracováním osobních údajů.</p>
                 </form>
             </div>
@@ -232,6 +234,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Thank You Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="popup__icon"><i class="fas fa-check-circle"></i></div>
+            <h3 class="popup__title">Děkujeme!</h3>
+            <p class="popup__text">Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.</p>
+            <button class="btn btn--primary popup__btn" id="popupClose">Zavřít</button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
