@@ -242,25 +242,8 @@
                 <div class="section__rule"></div>
                 <p class="section__subtitle">Máte zájem o spolupráci? Ozvěte se nám!</p>
             </div>
-            <div class="contact__grid">
-                <div class="contact__info">
-                    <div class="contact__card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Adresa</h4>
-                            <p>IQ Help & Datel Systems s.r.o.</p>
-                            <p>Česká republika</p>
-                        </div>
-                    </div>
-                    <div class="contact__card">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>E-mail</h4>
-                            <p><a href="mailto:info@iqhelp.cz">info@iqhelp.cz</a></p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact__form" id="contactForm" action="https://formsubmit.co/info@iqhelp.cz" method="POST">
+            <div class="contact__form-wrapper">
+                <form class="contact__form contact__form--full" id="contactForm" action="https://formsubmit.co/info@iqhelp.cz" method="POST">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="box">
                     <input type="hidden" name="_subject" value="Nová zpráva z webu IQ Help">
@@ -272,7 +255,15 @@
                         <input type="email" name="E-mail" placeholder="E-mail *" required>
                     </div>
                     <div class="form__row">
-                        <input type="tel" name="Telefon" placeholder="Telefonní kontakt *" required>
+                        <input type="tel" name="Telefon" placeholder="Telefonní kontakt">
+                    </div>
+                    <div class="form__row">
+                        <select name="Služba" required>
+                            <option value="" disabled selected>Vyberte službu *</option>
+                            <option value="Účetnictví">Účetnictví</option>
+                            <option value="Účetnictví s automatizací">Účetnictví s automatizací</option>
+                            <option value="Automatizace">Automatizace</option>
+                        </select>
                     </div>
                     <div class="form__row">
                         <textarea name="Zpráva" placeholder="Zpráva *" rows="5" required></textarea>
@@ -299,6 +290,9 @@
                     <a href="#services">Služby</a>
                     <a href="#portfolio">Portfolio</a>
                     <a href="#contact">Kontakt</a>
+                </div>
+                <div class="footer__contact">
+                    <a href="mailto:info@iqhelp.cz"><i class="fas fa-envelope"></i> info@iqhelp.cz</a>
                 </div>
             </div>
             <div class="footer__bottom">

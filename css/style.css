@@ -1158,7 +1158,8 @@ ul { list-style: none; }
 }
 
 .form__row input,
-.form__row textarea {
+.form__row textarea,
+.form__row select {
     width: 100%;
     padding: 14px 18px;
     border: 1.5px solid var(--border);
@@ -1168,10 +1169,21 @@ ul { list-style: none; }
     color: var(--text);
     background: var(--cream);
     transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form__row select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6565' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
 }
 
 .form__row input:focus,
-.form__row textarea:focus {
+.form__row textarea:focus,
+.form__row select:focus {
     outline: none;
     border-color: var(--brand);
     background: var(--white);
@@ -1192,6 +1204,15 @@ ul { list-style: none; }
     color: var(--text-muted);
     margin-top: 12px;
     opacity: 0.7;
+}
+
+.contact__form-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.contact__form--full {
+    width: 100%;
 }
 
 /* ===== FOOTER ===== */
@@ -1275,6 +1296,27 @@ ul { list-style: none; }
 
 .footer__menu a:hover {
     color: var(--gold);
+}
+
+.footer__contact {
+    margin-top: 16px;
+}
+
+.footer__contact a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer__contact a:hover {
+    color: var(--gold);
+}
+
+.footer__contact a i {
+    font-size: 14px;
 }
 
 .footer__bottom {
