@@ -1507,6 +1507,11 @@ ul { list-style: none; }
     color: rgba(255,255,255,0.2);
 }
 
+.footer__company-info {
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
 /* ===== ANIMATIONS ===== */
 [data-animate] {
     opacity: 0;
